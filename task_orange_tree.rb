@@ -9,22 +9,29 @@ class OrangeTree
 
   def oneYearPasses
     @orangeCount = 0
-    @height +=1
-    @year +=1
+    @height += 1
+    @year += 1
+    counting_quantity_orange
+    current_condition
+  end
 
-    if @year >= 5
-      @orangeCount = 3
+  def pickAnOrange
+    if orangeCount == 0
+     'no more oranges for the collection this year'
+    else
+      @orangeCount -= 1
+      'the orange was delicious'
     end
+  end
 
-    if @year >= 10
-      @orangeCount +=5
-    end
+  private
 
-    if @year >= 15
-      @orangeCount +=5
-    end
+  def counting_quantity_orange
+    year <= 5 ? @orangeCount = 0 : @orangeCount = @year*2 + 10
+  end
 
-    if @year >= 20
+  def current_condition
+    if year >= 20
       @orangeCount = 0
       @height = 0
       'Tree dead'
@@ -32,37 +39,36 @@ class OrangeTree
       'tree grows'
     end
   end
-
-  def pickAnOrange
-    @orangeCount -=1
-    @orangeCount == 0 ? 'no more oranges for the collection this year' : 'the orange was delicious'
-  end
 end
+
 
 # puts 'from birth'
 # OrangeTree1 = OrangeTree.new
-# puts 'height =' + ' ' + OrangeTree1.height.to_s
-# puts 'year =' + ' ' + OrangeTree1.year.to_s
-# puts 'orangeCount =' + ' ' + OrangeTree1.orangeCount.to_s
+# puts "height = #{OrangeTree1.height}"
+# puts "year = #{OrangeTree1.year}"
+# puts "orangeCount = #{OrangeTree1.orangeCount}"
 
 # puts 'through 1 year'
-# putsOrangeTree1.oneYearPasses
-# puts 'height =' + ' ' + OrangeTree1.height.to_s
-# puts 'year =' + ' ' + OrangeTree1.year.to_s
-# puts 'orangeCount =' + ' ' + OrangeTree1.orangeCount.to_s
+# puts OrangeTree1.oneYearPasses
+# puts "height = #{OrangeTree1.height}"
+# puts "year = #{OrangeTree1.year}"
+# puts "orangeCount = #{OrangeTree1.orangeCount}"
 
 # puts 'through 5 year'
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
-# puts 'height =' + ' ' + OrangeTree1.height.to_s
-# puts 'year =' + ' ' + OrangeTree1.year.to_s
-# puts 'orangeCount =' + ' ' + OrangeTree1.orangeCount.to_s
+# puts OrangeTree1.oneYearPasses
+# puts "height = #{OrangeTree1.height}"
+# puts "year = #{OrangeTree1.year}"
+# puts "orangeCount = #{OrangeTree1.orangeCount}"
 # puts OrangeTree1.pickAnOrange
-# puts 'orangeCount =' + ' ' + OrangeTree1.orangeCount.to_s
+# puts "orangeCount = #{OrangeTree1.orangeCount}"
 # puts OrangeTree1.pickAnOrange
 # puts OrangeTree1.pickAnOrange
+
+# puts 'through 17 year'
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
@@ -75,16 +81,16 @@ end
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
-# puts 'height =' + ' ' + OrangeTree1.height.to_s
-# puts 'year =' + ' ' + OrangeTree1.year.to_s
-# puts 'orangeCount =' + ' ' + OrangeTree1.orangeCount.to_s
+# puts "height = #{OrangeTree1.height}"
+# puts "year = #{OrangeTree1.year}"
+# puts "orangeCount = #{OrangeTree1.orangeCount}"
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
 # puts OrangeTree1.oneYearPasses
-# puts 'height =' + ' ' + OrangeTree1.height.to_s
-# puts 'year =' + ' ' + OrangeTree1.year.to_s
-# puts 'orangeCount =' + ' ' + OrangeTree1.orangeCount.to_s
+# puts "height = #{OrangeTree1.height}"
+# puts "year = #{OrangeTree1.year}"
+# puts "orangeCount = #{OrangeTree1.orangeCount}"
 # puts OrangeTree1.oneYearPasses
-# puts 'height =' + ' ' + OrangeTree1.height.to_s
-# puts 'year =' + ' ' + OrangeTree1.year.to_s
-# puts 'orangeCount =' + ' ' + OrangeTree1.orangeCount.to_s
+# puts "height = #{OrangeTree1.height}"
+# puts "year = #{OrangeTree1.year}"
+# puts "orangeCount = #{OrangeTree1.orangeCount}"
